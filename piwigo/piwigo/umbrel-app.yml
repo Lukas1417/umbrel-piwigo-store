@@ -1,0 +1,17 @@
+id: piwigo
+name: Piwigo
+version: "14.4.0"
+tagline: Self‑hosted photo gallery
+description: >
+  Piwigo je open‑source galéria fotografií s podporou albumov, tagov,
+  používateľov, pluginov a tém. Ideálne pre osobné alebo rodinné fotoarchívy.
+developer: Piwigo Team
+website: https://piwigo.org
+repo: https://github.com/Piwigo/Piwigo
+support: https://piwigo.org/forum
+port: 8081
+gallery:
+  - https://piwigo.org/screenshots/home.jpg
+  - https://piwigo.org/screenshots/album.jpg
+path: ""
+deterministic: true
