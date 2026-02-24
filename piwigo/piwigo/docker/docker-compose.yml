@@ -1,0 +1,32 @@
+version: "3.7"
+
+services:
+  piwigo:
+    image: linuxserver/piwigo:latest
+    container_name: piwigo
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Bratislava
+    volumes:
+      - ./config:/config
+      - ./gallery:/gallery
+    ports:
+      - "8081:80"
+    depends_on:
+      - mariadb
+
+  mariadb:
+    image: linuxserver/mariadb:latest
+    container_name: piwigo-mariadb
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - MYSQL_ROOT_PASSWORD=piwigo_root
+      - MYSQL_DATABASE=piwigo
+      - MYSQL_USER=piwigo
+      - MYSQL_PASSWORD=piwigo_pass
+    volumes:
+      - ./db:/config
